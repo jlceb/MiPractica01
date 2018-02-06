@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PC01.Views.WelcomeView"
+             Title="Inicio"
+             BackgroundColor="{StaticResource BackgroundColor}"	
+             BindingContext="{Binding WvM, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Mi prueba de contenido"
+                    TextColor="{StaticResource FontColor}"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+                <Image 
+                    Source="ic_launcher.png"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+            <BoxView
+                HeightRequest="3"
+                Color="{StaticResource DividerColor}"/>
+            <Label 
+                Text="{Binding Mensaje, Mode=OneWay}"              
+                Font="16"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"/>
+            <Entry
+                Text="{Binding Nombre, Mode=TwoWay}"
+                Placeholder="Ingrese su nombre aquí..."/>
+            <Button
+                Command="{Binding IniciarCommand}"
+                x:Name="btnIniciar"
+                Text="INICIAR"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource GeneralButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

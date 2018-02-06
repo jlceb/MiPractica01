@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PC01.Views.Services"
+             x:Class="PC01.Views.MainView"
+             Icon="ic_menu.png"     
+             Title="MENÚ"
+             MasterBehavior="Popover"
+             BindingContext="{Binding MvM, Source={StaticResource Locator}}">
+    <MasterDetailPage.Master>
+        <ContentPage Padding="5" BackgroundColor="#607D8B" Title="Opciones">
+            <ContentPage.Content>
+                <StackLayout Margin="5,20,5,5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            TextColor="White"
+                            Text ="USER:"
+                            VerticalOptions="Center"
+                            Font="14"
+                            FontAttributes="Bold">
+                        </Label>
+                        <Label 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text ="{x:Static local:Settings.UserLoggedIn}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            Font="16"
+                            FontAttributes="Bold">
+                        </Label>
+                        <DatePicker
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            Format="dd/MM/yyyy"
+                            IsEnabled="False">
+                        </DatePicker>
+                        <Label 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Font="18"
+                            Text="{Binding Horaactual, Mode=TwoWay}"
+                            VerticalOptions="Center">
+                        </Label>
+                        <Image 
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            Source="ic_download.png"/>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text ="{Binding Item1}"
+                            VerticalOptions="Center"
+                            Font="14"
+                            FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AccederDatosCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image 
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            Source="ic_logout.png"/>
+                        <Label 
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text ="{Binding Item2}"
+                            VerticalOptions="Center"
+                            Font="14"
+                            FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CerrarSesionCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

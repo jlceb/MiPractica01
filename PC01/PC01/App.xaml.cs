@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using PC01.Views;
+using PC01.Views.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +14,14 @@ namespace PC01
 	{
 		public App ()
 		{
-			InitializeComponent();
+            InitializeComponent();
 
-			MainPage = new PC01.MainPage();
+            MainPage = new NavigationPage(new WelcomeView());
 		}
 
-		protected override void OnStart ()
+        NavigationService _navigationService;
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
@@ -28,7 +33,8 @@ namespace PC01
 
 		protected override void OnResume ()
 		{
-			// Handle when your app resumes
-		}
+            _navigationService = new NavigationService();
+            _navigationService.NavigateTo("WelcomeView");
+        }
 	}
 }

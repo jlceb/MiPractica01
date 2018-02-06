@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PC01.Views.ContentView"
+             BindingContext="{Binding CvM, Source={StaticResource Locator}}">
+    <ContentPage Title="USUARIOS REGISTRADOS">
+        <ContentPage.Content>
+            <ListView x:Name="Milista" ItemsSource="{Binding Listado}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10,10,10,10">
+                                <Label Text="Nombre:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Nombre}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Correo electrónico:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Correo}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Teléfono:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Telefono}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="CRIPTOMONEDAS">
+        <ContentPage.Content>
+            <ListView x:Name="MilistaC" ItemsSource="{Binding ListadoCripto}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10,10,10,10">
+                                <Label Text="Nombre:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Name}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Símbolo:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Symbol}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Ranking:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Rank}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Valor en $:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Price_usd}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Valor en BTC:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Price_btc}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Variación en 1h:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Percent_change_1h}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Variación en 24h:"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Percent_change_24h}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="Variación en 7 días"
+                                       TextColor="Black"
+                                       Font="16"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding Percent_change_7d}"
+                                       TextColor="Black"
+                                       Font="16"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
