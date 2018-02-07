@@ -20,6 +20,7 @@
                    Text="{Binding Email}"
                    Placeholder="Correo electrónico"/>
             <Entry x:Name="Phone"
+                   Keyboard="Telephone"
                    Text="{Binding Phone}"
                    Placeholder="Teléfono"/>
             <Entry x:Name="Password"

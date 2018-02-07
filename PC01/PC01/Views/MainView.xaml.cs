@@ -15,7 +15,7 @@ namespace PC01.Views
 		public MainView ()
 		{
 			InitializeComponent ();
-            this.Detail = new NavigationPage(new ContentView());
+            this.Detail = new ContentView();
             IsPresented = true;
 		}
     }

@@ -16,5 +16,14 @@ namespace PC01.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Fullname.Text = "";
+            Email.Text = "";
+            Phone.Text = "";
+            Password.Text = "";
+        }
+    }
 }
